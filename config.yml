@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    machine: 
+      docker_layer_caching: true      
+    steps:
+      - run:
+          name: Login on Docker
+          command: docker login --username poolatd --password services1
+      - run:
+          name: Pull Saru image from Docker Hub
+          command: docker pull poolatd/saru:latest
+      - run:
+          name: Execute tests
+          command: docker run --publish-all --env REPONAME=${CIRCLE_PROJECT_REPONAME} --env BRANCH=${CIRCLE_BRANCH} poolatd/saru:latest /bin/bash -c 'cd /home/circleci/ ; source ~/.rvm/scripts/rvm ; ./saru.sh $REPONAME $BRANCH test:ci'
