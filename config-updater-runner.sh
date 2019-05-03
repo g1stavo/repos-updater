@@ -1,7 +1,3 @@
 #!bin/bash
-./config-updater.sh saraiva-v5
-./config-updater.sh centauro-v5
-./config-updater.sh cea 
-./config-updater.sh malwee
-./config-updater.sh marisa
-./config-updater.sh paquetaesportes
+APIKEYS=("saraiva-v5" "centauro-v5" "cea" "malwee" "marisa" "paquetaesportes")
+for i in "${APIKEYS[@]}"; do ./config-updater.sh $i; done
