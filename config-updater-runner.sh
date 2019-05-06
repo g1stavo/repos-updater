@@ -6,7 +6,7 @@ HAS_CONFIG=()
 existsConfig() {
     STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://api.github.com/repos/chaordic/theme-"$i"/contents/.circleci/config.yml -u g1stavo:'J*r-Q=4Zx<mcfL3G}e^]zV(h,D^mmBun99raK+Q>x.$<~wVBj5j4D;->fjW%C"\\tR:A9Fw&')
     if [[ $STATUS -eq "200" ]] ; then
-        HAS_CONFIG+="$i"
+        HAS_CONFIG+=("$i")
     fi
 }
 

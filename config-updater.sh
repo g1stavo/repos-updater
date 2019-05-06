@@ -1,4 +1,5 @@
-#!bin/bash
+#!/bin/bash
+
 APIKEY="$1"
 BRANCH_NAME="update-ci-config"
 COMMIT_MESSAGE="Update .circleci/config.yml"
@@ -11,3 +12,5 @@ cp ../config.yml .circleci/
 git add .
 git commit -m "${COMMIT_MESSAGE}"
 git push origin "${BRANCH_NAME}"
+cd ..
+rm -rf theme-"${APIKEY}"
