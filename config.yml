@@ -13,19 +13,3 @@ jobs:
       - run:
           name: Execute tests
           command: docker run --publish-all --env REPONAME=${CIRCLE_PROJECT_REPONAME} --env BRANCH=${CIRCLE_BRANCH} poolatd/saru:latest /bin/bash -c 'cd /home/circleci/ ; source ~/.rvm/scripts/rvm ; ./saru.sh $REPONAME $BRANCH test:ci'
-
-
-
-beautybox-vtex OK
-cea OK
-centauro-v5 OK
-consul OK
-drogariaaraujo OK
-gaston OK
-imaginarium-vtex OK
-malwee
-marisa
-paqueta OK
-paquetaesportes OK
-saraiva-v5 OK
-savegnago OK
