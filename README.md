@@ -6,7 +6,7 @@ _Use cases_: CI config files, PR templates, any file that a list of repos have i
 
 ## Usage
 
-**1**. Make sure you have the PAT token has full `repo` scoped access to the repos you want to update
+**1**. Make sure [your PAT token](https://github.com/settings/tokens/new) has full `repo` scoped access to the repos you want to update
 
 **2**. Create a `update.config` file, like `updater.config.example`:
    - `TOKEN`: GitHub Personal Access Token, for checking repos existence
